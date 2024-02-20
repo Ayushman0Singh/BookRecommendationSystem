@@ -1,11 +1,52 @@
-# BookRecommendation
-Online book websites compete a lot over book sales and the number of users. A sound book recommendation system can attract users and sustain them. It is an important feature to have on your website. Our task is to develop a book recommendation system given users' data and ratings for specific books. 
+# BookRecommendation: Collaborative Filtering Book Recommendation System
 
-The purpose of a book recommendation system is to predict buyers' interests and recommend books to them accordingly. A book recommendation system can take into account many parameters. I have used the collaborative filtering approach to develop my recommendation system. As a result, I developed two recommendation systems, one memory-based and one model-based. 
+## Introduction
 
-First, we do some EDA to understand the user demographics and rating distribution, followed by data cleaning(Null-value treatment) and feature engineering. The data is too big to develop a general recommendation system. So, we applied some minimum qualifying thresholds in the feature engineering step. This step also reduces the data size and addresses the cold start problem. 
+In the competitive online book market, robust book recommendation systems play a crucial role in attracting and retaining users. This project develops a book recommendation system using collaborative filtering techniques, leveraging user data and book ratings.
 
-I have applied two collaborative filtering approaches. First, I have used a memory-based collaborative filtering approach using k-nearest neighbours. 
-Next, I used a model-based approach using singular value decomposition. I assumed some latent interactions between the users and items. I used this to recreate the user-item interaction matrix and ranked the ratings for recommendations. 
+## Objective and Approach
 
-We choose to work with Top-N accuracy metrics, which evaluate the accuracy of the top recommendations provided to a user compared to the items the user has interacted with in the test set. The Top-N accuracy metric chosen was Recall@N which evaluates whether the interacted thing is among the top N items (hit) in the ranked list of 101 recommendations for a user. For example, the recall@5 for our recommendation system was 0.14, and recall@10 was 0.22.
+The system aims to predict user interests and recommend relevant books. Two collaborative filtering approaches are implemented:
+
+1. **Memory-based (k-Nearest Neighbors):** Identifies similar users based on rating history and recommends books they enjoyed.
+2. **Model-based (Singular Value Decomposition):** Uncovers latent interactions between users and books to reconstruct the user-item matrix and rank recommendations.
+
+## Methodology
+
+### Exploratory Data Analysis (EDA):
+
+- Understand user demographics and rating distribution.
+- Identify and address data cleaning requirements (null-value treatment).
+
+### Feature Engineering:
+
+- Apply minimum qualifying thresholds to reduce data size and address the cold start problem.
+- Engineer relevant features for optimal recommendation.
+
+### Recommendation Algorithms:
+
+- **Memory-based:** Employ k-Nearest Neighbors to find similar users and recommend their rated books.
+- **Model-based:** Use Singular Value Decomposition to model latent interactions, reconstruct the user-item matrix, and rank recommendations.
+
+### Evaluation:
+
+- Use Top-N accuracy metrics (Recall@N) to assess the accuracy of top recommendations compared to user interactions.
+
+## Evaluation Results
+
+- Recall@5: 0.14
+- Recall@10: 0.22
+
+## Conclusion
+
+This project demonstrates the successful development of a book recommendation system using collaborative filtering techniques. Further improvements could involve:
+
+- Experimenting with different algorithms and parameters.
+- Incorporating additional data sources (e.g., book attributes, content analysis).
+- Dynamically adapting to user preferences and evolving trends.
+
+## Future Work
+
+- Explore advanced recommendation techniques (e.g., hybrid approaches).
+- Enhance evaluation by considering user satisfaction and click-through rates.
+- Continuously adapt and improve the system based on user feedback and evolving data.
